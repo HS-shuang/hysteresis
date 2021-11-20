@@ -84,11 +84,11 @@ class Mani(object):
 
 t = np.linspace(-2*np.pi, 2 * np.pi, 361)
 fig = plt.figure(figsize=(5, 6))
-psi = 90*np.pi/180
+psi = 60*np.pi/180
 A = Mani(fig, psi)
 x = np.linspace(-5, 5, 50)
 B = np.hstack((x, x[::-1]))
 ani = animation.FuncAnimation(fig, A.animate, iter(B),
                                fargs=[fig, psi, [-2*np.pi, 2*np.pi]], interval=100)
-ani.save(f'{psi/np.pi*180: .0f}°.gif')
+ani.save(f'../Outcome/{psi/np.pi*180: .0f}°.gif')
 
